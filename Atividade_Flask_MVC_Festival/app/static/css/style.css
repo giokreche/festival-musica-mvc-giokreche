@@ -1,0 +1,515 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+/* =========================================
+   FESTIVAL DE MÚSICA — ESTÉTICA ROCOCÓ
+   Palácio francês | Marfim | Rosé | Champagne
+========================================= */
+
+:root {
+    --ivory: #f8f3eb;
+    --cream: #efe4d3;
+    --champagne: #d4b477;
+    --gold: #b8975d;
+    --gold-light: #e8d4a7;
+    --rose: #bd8b91;
+    --rose-light: #ead3d2;
+    --powder-blue: #b9cbd8;
+    --wine: #704650;
+    --wine-dark: #4c3038;
+    --brown: #554338;
+    --text: #51433b;
+    --muted: #897a6d;
+    --white: #fffdf9;
+    --shadow: rgba(83, 58, 48, 0.12);
+}
+
+/* RESET E BASE */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top left, #fffaf3 0%, transparent 40%),
+        linear-gradient(135deg, #f8f2e9, #eee1d5);
+    color: var(--text);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.2px;
+}
+
+/* DETALHES DE FUNDO */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 12px;
+    border: 1px solid rgba(184, 151, 93, 0.35);
+    outline: 1px solid rgba(184, 151, 93, 0.13);
+    outline-offset: 5px;
+    pointer-events: none;
+    z-index: 999;
+}
+
+/* TÍTULOS */
+
+h1, h2, h3, h4, h5 {
+    color: var(--wine);
+    font-family: 'Cinzel', serif;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    text-align: center;
+    margin: 35px 0 15px;
+}
+
+h1::after {
+    content: "❧  ✦  ❧";
+    display: block;
+    margin-top: 12px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: var(--gold);
+    letter-spacing: 8px;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+h3 {
+    font-size: 1.35rem;
+}
+
+/* PARÁGRAFOS */
+
+p {
+    line-height: 1.8;
+}
+
+small, .text-muted {
+    color: var(--muted) !important;
+}
+
+/* LINKS */
+
+a {
+    color: var(--wine);
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+a:hover {
+    color: var(--gold);
+}
+
+/* NAVBAR */
+
+.navbar {
+    background: rgba(255, 253, 249, 0.95) !important;
+    border-bottom: 1px solid var(--gold-light);
+    box-shadow: 0 4px 18px var(--shadow);
+    padding: 18px 5%;
+}
+
+.navbar-brand {
+    color: var(--wine) !important;
+    font-family: 'Cinzel', serif;
+    font-size: 1.35rem;
+    letter-spacing: 2px;
+}
+
+.navbar-brand::before {
+    content: "✧ ";
+    color: var(--gold);
+}
+
+.navbar .nav-link {
+    color: var(--brown) !important;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+    margin: 0 8px;
+}
+
+.navbar .nav-link:hover {
+    color: var(--rose) !important;
+}
+
+/* CONTAINER */
+
+.container {
+    max-width: 1200px;
+}
+
+/* CARDS */
+
+.card {
+    background: rgba(255, 253, 249, 0.93);
+    border: 1px solid var(--gold-light);
+    border-radius: 3px;
+    box-shadow: 0 8px 25px var(--shadow);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.card::before {
+    content: "✧";
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    color: var(--gold);
+    font-size: 18px;
+    z-index: 1;
+}
+
+.card-header {
+    background: linear-gradient(135deg, #f2e5d5, #fffaf3) !important;
+    color: var(--wine) !important;
+    border-bottom: 1px solid var(--gold-light);
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1px;
+    padding: 18px 22px;
+}
+
+.card-body {
+    padding: 24px;
+}
+
+/* BOTÕES */
+
+.btn {
+    border-radius: 2px;
+    padding: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 8px rgba(70, 45, 35, 0.08);
+}
+
+.btn-primary {
+    background: var(--wine) !important;
+    border: 1px solid var(--gold) !important;
+    color: var(--white) !important;
+}
+
+.btn-primary:hover {
+    background: var(--wine-dark) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px var(--shadow);
+}
+
+.btn-success {
+    background: #879b87 !important;
+    border: 1px solid #c4d0bd !important;
+    color: white !important;
+}
+
+.btn-danger {
+    background: #a86670 !important;
+    border: 1px solid #d8a9aa !important;
+    color: white !important;
+}
+
+.btn-warning {
+    background: var(--champagne) !important;
+    border: 1px solid var(--gold) !important;
+    color: var(--wine-dark) !important;
+}
+
+.btn-info {
+    background: var(--powder-blue) !important;
+    border: 1px solid #91afc1 !important;
+    color: #384f60 !important;
+}
+
+.btn-secondary {
+    background: #c2b5a7 !important;
+    border: 1px solid #d6c7b7 !important;
+    color: white !important;
+}
+
+.btn-outline-primary {
+    border: 1px solid var(--gold) !important;
+    color: var(--wine) !important;
+    background: transparent !important;
+}
+
+.btn-outline-primary:hover {
+    background: var(--wine) !important;
+    color: white !important;
+}
+
+/* FORMULÁRIOS */
+
+.form-control,
+.form-select {
+    background-color: #fffdf9;
+    border: 1px solid #ddcdaF;
+    border-radius: 2px;
+    padding: 11px 14px;
+    color: var(--text);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+    background-color: white;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(212, 180, 119, 0.18);
+}
+
+.form-label,
+label {
+    color: var(--wine);
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+/* TABELAS */
+
+.table {
+    --bs-table-bg: transparent;
+    --bs-table-color: var(--text);
+    margin-bottom: 0;
+}
+
+.table thead th {
+    background: #eee1d1;
+    color: var(--wine);
+    border-bottom: 1px solid var(--gold);
+    font-family: 'Cinzel', serif;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+    padding: 15px;
+}
+
+.table tbody td {
+    padding: 13px 15px;
+    border-bottom: 1px solid #e9ded1;
+    vertical-align: middle;
+}
+
+.table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.table tbody tr:hover {
+    background: rgba(234, 211, 210, 0.25);
+}
+
+/* ALERTAS */
+
+.alert {
+    border-radius: 3px;
+    border: 1px solid var(--gold-light);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+}
+
+.alert-success {
+    background: #edf1e8;
+    color: #52684d;
+}
+
+.alert-danger {
+    background: #f5e5e4;
+    color: #874c53;
+}
+
+.alert-warning {
+    background: #f8efd9;
+    color: #796139;
+}
+
+.alert-info {
+    background: #e8eef2;
+    color: #4d6576;
+}
+
+/* BADGES */
+
+.badge {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    border-radius: 2px;
+    padding: 7px 10px;
+}
+
+.bg-primary {
+    background-color: var(--wine) !important;
+}
+
+.bg-success {
+    background-color: #879b87 !important;
+}
+
+.bg-warning {
+    background-color: var(--champagne) !important;
+    color: var(--wine-dark) !important;
+}
+
+.bg-danger {
+    background-color: var(--rose) !important;
+}
+
+/* LISTAS */
+
+.list-group-item {
+    background: rgba(255, 253, 249, 0.8);
+    border-color: #e6d7c3;
+    color: var(--text);
+    padding: 14px 18px;
+}
+
+.list-group-item:hover {
+    background: #f7ece7;
+}
+
+/* MODAIS */
+
+.modal-content {
+    background: var(--ivory);
+    border: 1px solid var(--gold);
+    border-radius: 3px;
+    box-shadow: 0 15px 45px rgba(52, 34, 30, 0.2);
+}
+
+.modal-header {
+    background: var(--cream);
+    border-bottom: 1px solid var(--gold-light);
+}
+
+.modal-title {
+    font-family: 'Cinzel', serif;
+    color: var(--wine);
+}
+
+/* PAGINAÇÃO */
+
+.pagination .page-link {
+    color: var(--wine);
+    background: var(--white);
+    border-color: var(--gold-light);
+}
+
+.pagination .page-item.active .page-link {
+    background: var(--wine);
+    border-color: var(--gold);
+    color: white;
+}
+
+/* DIVISORES DECORATIVOS */
+
+hr {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--gold),
+        transparent
+    );
+    opacity: 0.7;
+    margin: 30px 0;
+}
+
+/* FOOTER */
+
+footer {
+    margin-top: 70px;
+    padding: 35px 20px;
+    background: rgba(96, 59, 69, 0.96);
+    color: var(--cream);
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    border-top: 2px solid var(--gold);
+}
+
+footer::before {
+    content: "❦  ✧  ❦";
+    display: block;
+    color: var(--gold-light);
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+
+/* CHECKBOXES */
+
+.form-check-input {
+    border-color: var(--gold);
+}
+
+.form-check-input:checked {
+    background-color: var(--wine);
+    border-color: var(--gold);
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--ivory);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--champagne);
+    border: 2px solid var(--ivory);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gold);
+}
+
+/* SELEÇÃO DE TEXTO */
+
+::selection {
+    background: var(--rose-light);
+    color: var(--wine-dark);
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+    body::before {
+        inset: 5px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .navbar {
+        padding: 12px 4%;
+    }
+
+    .card-body {
+        padding: 16px;
+    }
+
+    .table {
+        font-size: 0.82rem;
+    }
+
+    .btn {
+        padding: 9px 13px;
+        font-size: 0.7rem;
+    }
+}

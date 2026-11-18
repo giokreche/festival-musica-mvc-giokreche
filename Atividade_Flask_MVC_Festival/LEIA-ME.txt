@@ -1,0 +1,10 @@
+ATIVIDADE — FLASK MVC — FESTIVAL DE MÚSICA
+
+1. Leia primeiro o arquivo TUTORIAL.md.
+2. O projeto deve ser aberto no VS Code pela pasta que contém run.py.
+3. Crie o banco PostgreSQL chamado festival_mvc.
+4. Copie .env.example para .env e configure suas credenciais.
+5. Instale requirements.txt e execute as migrations conforme o tutorial.
+6. Inicie com: python run.py
+
+Atenção: não compartilhe o arquivo .env, pois ele contém sua senha do banco.

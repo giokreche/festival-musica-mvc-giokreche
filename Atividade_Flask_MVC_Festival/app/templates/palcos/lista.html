@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Palcos{% endblock %}
+{% block content %}
+<h1>Palcos</h1><a class="btn btn-success mb-3" href="{{ url_for('novo_palco') }}">Novo palco</a>
+<table class="table table-striped"><thead><tr><th>Nome</th><th>Localização</th><th>Capacidade</th><th>Ações</th></tr></thead><tbody>
+{% for p in palcos %}<tr><td>{{ p.nome }}</td><td>{{ p.localizacao }}</td><td>{{ p.capacidade }}</td><td>
+<a class="btn btn-warning btn-sm" href="{{ url_for('editar_palco', id=p.id) }}">Editar</a>
+<form class="d-inline" method="POST" action="{{ url_for('deletar_palco', id=p.id) }}"><button class="btn btn-danger btn-sm" onclick="return confirm('Excluir este palco e suas apresentações?')">Excluir</button></form>
+</td></tr>{% else %}<tr><td colspan="4">Nenhum palco cadastrado.</td></tr>{% endfor %}
+</tbody></table>{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Apresentações{% endblock %}
+{% block content %}
+<h1>Apresentações</h1><a class="btn btn-success mb-3" href="{{ url_for('nova_apresentacao') }}">Nova apresentação</a>
+<table class="table table-striped"><thead><tr><th>Título</th><th>Data/horário</th><th>Palco</th><th>Artistas</th><th>Ações</th></tr></thead><tbody>
+{% for p in apresentacoes %}<tr><td>{{ p.titulo }}</td><td>{{ p.data_hora }}</td><td>{{ p.palco.nome }}</td><td>{{ p.artistas|map(attribute='nome')|join(', ') }}</td><td>
+<a class="btn btn-warning btn-sm" href="{{ url_for('editar_apresentacao', id=p.id) }}">Editar</a>
+<form class="d-inline" method="POST" action="{{ url_for('deletar_apresentacao', id=p.id) }}"><button class="btn btn-danger btn-sm" onclick="return confirm('Excluir apresentação?')">Excluir</button></form>
+</td></tr>{% else %}<tr><td colspan="5">Nenhuma apresentação cadastrada.</td></tr>{% endfor %}
+</tbody></table>{% endblock %}

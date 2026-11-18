@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Artistas{% endblock %}
+{% block content %}
+<h1>Artistas</h1><a class="btn btn-success mb-3" href="{{ url_for('novo_artista') }}">Novo artista</a>
+<table class="table table-striped"><thead><tr><th>Nome</th><th>Gênero</th><th>Contrato</th><th>Ações</th></tr></thead><tbody>
+{% for a in artistas %}<tr><td>{{ a.nome }}</td><td>{{ a.genero_musical }}</td><td>{% if a.contrato %}R$ {{ a.contrato.cache }}{% else %}Não cadastrado{% endif %}</td><td>
+<a class="btn btn-info btn-sm" href="{{ url_for('gerenciar_contrato', artista_id=a.id) }}">Contrato</a>
+<a class="btn btn-warning btn-sm" href="{{ url_for('editar_artista', id=a.id) }}">Editar</a>
+<form class="d-inline" method="POST" action="{{ url_for('deletar_artista', id=a.id) }}"><button class="btn btn-danger btn-sm" onclick="return confirm('Excluir artista?')">Excluir</button></form>
+</td></tr>{% else %}<tr><td colspan="4">Nenhum artista cadastrado.</td></tr>{% endfor %}
+</tbody></table>{% endblock %}
